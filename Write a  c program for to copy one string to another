@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+// Function to copy one string to another
+void copyString(char destination[], const char source[]) {
+    int i = 0;
+
+    // Copy each character from source to destination
+    while (source[i] != '\0') {
+        destination[i] = source[i];
+        i++;
+    }
+
+    // Null-terminate the destination string
+    destination[i] = '\0';
+}
+
+int main() {
+    char source[100], destination[100];
+
+    printf("Enter a string to copy: ");
+    fgets(source, sizeof(source), stdin);
+
+    // Remove newline character if present
+    if (source[strlen(source) - 1] == '\n') {
+        source[strlen(source) - 1] = '\0';
+    }
+
+    // Call the copyString function to copy the string
+    copyString(destination, source);
+
+    printf("Original String: %s\n", source);
+    printf("Copied String  : %s\n", destination);
+
+    return 0;
+}
+``
